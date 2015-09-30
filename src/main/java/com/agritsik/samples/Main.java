@@ -9,12 +9,19 @@ public class Main {
 
     public static void main(String[] args) {
 
+//        int[] r1 = {1, 4, 5, 8, 1, 9, 1, 5};
+//        duplication(r1);
 
-        int[] arr = {1, 4, 5, 8, 1, 9, 1, 5};
+//        int[] r2 = merge(new int[]{8, 2, 4}, new int[]{3, 9, 4, 12, 9});
+//        System.out.println(Arrays.toString(r2));
 
-        duplication(arr);
     }
 
+    /**
+     * Find/delete duplicates from array
+     *
+     * @param arr
+     */
     public static void duplication(int[] arr) {
         Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
@@ -31,9 +38,40 @@ public class Main {
                 i++;
             }
 
-            if(!duplicated) System.out.println(arr[i]); // here I know all about the duplicates :)
+            if (!duplicated) System.out.println(arr[i]); // here I know all about the duplicates :)
 
             i++;
         }
+    }
+
+    /**
+     * Merges to arrays
+     *
+     * @param m1
+     * @param m2
+     * @return
+     */
+    public static int[] merge(int[] m1, int[] m2) {
+
+        Arrays.sort(m1);
+        Arrays.sort(m2);
+
+        int[] result = new int[m1.length + m2.length];
+
+        int i = 0, j = 0, y = 0;
+        while (i < m1.length && j < m2.length) {
+
+            if (m1[i] <= m2[j]) {
+                result[y++] = m1[i++];
+            } else {
+                result[y++] = m2[j++];
+            }
+        }
+
+        while (i < m1.length) result[y++] = m1[i++];
+        while (j < m2.length) result[y++] = m2[j++];
+
+        return result;
+
     }
 }
