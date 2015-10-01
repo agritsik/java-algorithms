@@ -75,13 +75,12 @@ public class Array3 {
         while (i < nums.length) {
 
             if (nums[i] == 3) {
-                j = 0;
                 while (j < nums.length) {
 
                     if (nums[j] == 4 && nums[j - 1] != 3) { // do swap
                         tmp = nums[i + 1];
                         nums[i + 1] = nums[j];
-                        nums[j] = tmp;
+                        nums[j++] = tmp;
                         break;
                     }
                     j++;
