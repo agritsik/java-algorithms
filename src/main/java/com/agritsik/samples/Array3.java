@@ -69,4 +69,30 @@ public class Array3 {
     }
 
 
+    public int[] fix34(int[] nums) {
+
+        int i = 0, j = 0, tmp = 0;
+        while (i < nums.length) {
+
+            if (nums[i] == 3) {
+                j = 0;
+                while (j < nums.length) {
+
+                    if (nums[j] == 4 && nums[j - 1] != 3) { // do swap
+                        tmp = nums[i + 1];
+                        nums[i + 1] = nums[j];
+                        nums[j] = tmp;
+                        break;
+                    }
+                    j++;
+                }
+            }
+
+            i++;
+
+        }
+        return nums;
+    }
+
+
 }
