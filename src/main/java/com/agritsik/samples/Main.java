@@ -9,11 +9,9 @@ public class Main {
 
     public static void main(String[] args) {
 
-//        int[] r1 = {1, 4, 5, 8, 1, 9, 1, 5};
-//        duplication(r1);
-
-//        int[] r2 = merge(new int[]{8, 2, 4}, new int[]{3, 9, 4, 12, 9});
-//        System.out.println(Arrays.toString(r2));
+//        duplication(new int[]{1, 4, 5, 8, 1, 9, 1, 5});
+//        duplication2(new int[]{1, 4, 4, 4, 5, 6, 8}, new int[]{2, 4, 3, 6, 9, 11});
+//        merge(new int[]{8, 2, 4}, new int[]{3, 9, 4, 12, 9});
 
     }
 
@@ -42,6 +40,26 @@ public class Main {
 
             i++;
         }
+    }
+
+    private static void duplication2(int[] arr1, int[] arr2) {
+
+        int[] r = new int[Math.min(arr1.length, arr2.length)];
+
+        int i = 0, j = 0;
+        while (i < arr1.length && j < arr2.length) {
+
+            if (arr1[i] > arr2[j]) {
+                j++;
+            } else if (arr1[i] < arr2[j]) {
+                i++;
+            } else {
+                System.out.println(arr1[i]);
+                i++;
+                j++;
+            }
+        }
+
     }
 
     /**
