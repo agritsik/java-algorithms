@@ -1,4 +1,4 @@
-package com.agritsik.samples;
+package com.agritsik.samples.codingbat.warmup;
 
 /**
  * Hello world!

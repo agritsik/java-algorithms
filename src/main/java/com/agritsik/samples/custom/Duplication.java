@@ -1,11 +1,11 @@
-package com.agritsik.samples;
+package com.agritsik.samples.custom;
 
 import java.util.Arrays;
 
 /**
  * Created by andrey on 9/29/15.
  */
-public class Main {
+public class Duplication {
 
     public static void main(String[] args) {
 

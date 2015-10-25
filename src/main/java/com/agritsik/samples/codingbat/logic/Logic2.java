@@ -1,4 +1,4 @@
-package com.agritsik.samples;
+package com.agritsik.samples.codingbat.logic;
 
 import java.util.Arrays;
 

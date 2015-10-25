@@ -1,4 +1,4 @@
-package com.agritsik.samples;
+package com.agritsik.samples.codingbat.string;
 
 /**
  * Created by andrey on 9/30/15.
