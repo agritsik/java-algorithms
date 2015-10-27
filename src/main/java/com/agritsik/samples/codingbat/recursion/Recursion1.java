@@ -21,5 +21,16 @@ public class Recursion1 {
         return fibonacci(n - 1) + fibonacci(n - 2);
     }
 
+    public int bunnyEars2(int bunnies) {
+        if (bunnies == 0) return 0;
+
+        return (bunnies % 2 == 0) ? 3 + (bunnyEars2(bunnies - 1)) : 2 + (bunnyEars2(bunnies - 1));
+    }
+
+    public int count7(int n) {
+        if (n == 0) return 0;
+        return (n % 10 == 7) ? 1 + count7(n / 10) : count7(n / 10);
+    }
+
 
 }
