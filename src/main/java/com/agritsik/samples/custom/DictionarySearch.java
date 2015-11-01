@@ -1,5 +1,7 @@
 package com.agritsik.samples.custom;
 
+import org.apache.commons.collections4.trie.PatriciaTrie;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -10,20 +12,23 @@ public class DictionarySearch {
 
     // domakedo
 
-    static List<String> d = new ArrayList<String>() {{
+    static List<String> list = new ArrayList<String>() {{
         add("and");
         add("do");
         add("make");
     }};
 
+    static PatriciaTrie trie = new PatriciaTrie(){{
+        put("and", null);
+        put("do", null);
+        put("make", null);
+    }};
+
 
     public static void main(String[] args) {
-
-        String q = "doando";
-        boolean b = execute(q);
-
-        System.out.println("Result: " + b);
-
+        System.out.println("Result: " + execute("domake"));
+        System.out.println("Result: " + execute("doanddo"));
+        System.out.println("Result: " + execute("doando"));
     }
 
     private static boolean execute(String q) {
@@ -33,7 +38,7 @@ public class DictionarySearch {
 
             String substring = q.substring(0, i);
 
-            if (contains(substring)) {
+            if (containsInTrie(substring)) {
                 return execute(q.substring(i));
             }
 
@@ -41,9 +46,15 @@ public class DictionarySearch {
         return false;
     }
 
-    static boolean contains(String q) {
-        return d.contains(q);
+    static boolean containsInList(String q) {
+        return list.contains(q);
     }
+
+    static boolean containsInTrie(String q) {
+        return trie.containsKey(q);
+    }
+
+
 
 
 }
