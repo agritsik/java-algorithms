@@ -15,7 +15,7 @@ public class Distinct {
 
             boolean d = false;
 
-            while (i < A.length-1 && A[i] == A[i + 1]) {
+            while (i < A.length - 1 && A[i] == A[i + 1]) {
                 d = true;
                 i++;
             }
