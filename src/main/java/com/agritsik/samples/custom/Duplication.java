@@ -2,27 +2,22 @@ package com.agritsik.samples.custom;
 
 import java.util.Arrays;
 
-/**
- * Created by andrey on 9/29/15.
- */
 public class Duplication {
 
     public static void main(String[] args) {
-
-//        duplication(new int[]{1, 4, 5, 8, 1, 9, 1, 5});
-//        duplication2(new int[]{1, 4, 4, 4, 5, 6, 8}, new int[]{2, 4, 3, 6, 9, 11});
-//        merge(new int[]{8, 2, 4}, new int[]{3, 9, 4, 12, 9});
-
+        duplicationInArray();
+        duplicationInTwoArrays();
+        mergeTwoArrays();
     }
 
     /**
      * Find/delete duplicates from array
-     *
-     * @param arr
      */
-    public static void duplication(int[] arr) {
+    public static void duplicationInArray() {
+
+        int[] arr = new int[]{1, 4, 5, 8, 1, 9, 1, 5};
+
         Arrays.sort(arr);
-        System.out.println(Arrays.toString(arr));
 
         int i = 0;
         while (i < arr.length) {
@@ -42,7 +37,9 @@ public class Duplication {
         }
     }
 
-    private static void duplication2(int[] arr1, int[] arr2) {
+    private static void duplicationInTwoArrays() {
+        int[] arr1 = new int[]{1, 4, 4, 4, 5, 6, 8};
+        int[] arr2 = new int[]{2, 4, 3, 6, 9, 11};
 
         int[] r = new int[Math.min(arr1.length, arr2.length)];
 
@@ -64,12 +61,11 @@ public class Duplication {
 
     /**
      * Merges to arrays
-     *
-     * @param m1
-     * @param m2
-     * @return
      */
-    public static int[] merge(int[] m1, int[] m2) {
+    public static int[] mergeTwoArrays() {
+
+        int[] m1 = new int[]{8, 2, 4};
+        int[] m2 = new int[]{3, 9, 4, 12, 9};
 
         Arrays.sort(m1);
         Arrays.sort(m2);
