@@ -1,43 +1,35 @@
-package com.agritsik.samples.custom;
+package com.agritsik.samples.popular;
 
 import java.util.Arrays;
 
-public class Duplication {
+public class ArraysAndSorting {
 
-    public static void main(String[] args) {
-        duplicationInArray();
-        duplicationInTwoArrays();
-        mergeTwoArrays();
-    }
+    public static int[] findDuplicates(int[] arr) {
+        Arrays.sort(arr); // 1 1 1 4 5 5 8 9 9
 
-    /**
-     * Find/delete duplicates from array
-     */
-    public static void duplicationInArray() {
+        int[] result = new int[arr.length];
+        boolean withinDuplicatedGroup = false;
 
-        int[] arr = new int[]{1, 4, 5, 8, 1, 9, 1, 5};
-
-        Arrays.sort(arr);
-
-        int i = 0;
+        int i = 1, j = 0;
         while (i < arr.length) {
 
-            // assume that current element doesn't have a duplicate
-            boolean duplicated = false;
+            if (arr[i] == arr[i - 1]) {
+                if (i == arr.length - 1) result[j++] = arr[i - 1];
+                withinDuplicatedGroup = true;
 
-            // if next exists and current == next
-            while (i + 1 < arr.length && arr[i] == arr[i + 1]) {
-                duplicated = true;
-                i++;
+            } else {
+                if (withinDuplicatedGroup) result[j++] = arr[i - 1];
+                withinDuplicatedGroup = false;
+
             }
-
-            if (!duplicated) System.out.println(arr[i]); // here I know all about the duplicates :)
 
             i++;
         }
+
+        return Arrays.copyOf(result, j);
     }
 
-    private static void duplicationInTwoArrays() {
+    public static void duplicationInTwoArrays() {
         int[] arr1 = new int[]{1, 4, 4, 4, 5, 6, 8};
         int[] arr2 = new int[]{2, 4, 3, 6, 9, 11};
 

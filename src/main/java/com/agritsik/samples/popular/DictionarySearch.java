@@ -1,4 +1,4 @@
-package com.agritsik.samples.custom;
+package com.agritsik.samples.popular;
 
 import org.apache.commons.collections4.trie.PatriciaTrie;
 
