@@ -49,4 +49,37 @@ public class ArraysAndSortingTest extends TestCase {
 
     }
 
+
+    // --------------------------------------------------------------------
+    // --------------------------------------------------------------------
+    // --------------------------------------------------------------------
+
+
+    public void testContainsYes() throws Exception {
+        // arrange
+        int[] outer = new int[]{1, 3, 4, 5, 8, 11, 14, 20};
+        int[] inner = new int[]{4, 8, 14};
+
+
+        // act
+        boolean r = ArraysAndSorting.contains(outer, inner);
+
+        // assert
+        assertTrue(r);
+
+    }
+
+    public void testContainsNo() throws Exception {
+        // arrange
+        int[] outer = new int[]{1, 3, 4, 5, 8, 11, 14, 20};
+        int[] inner = new int[]{4, 9, 14};
+
+
+        // act
+        boolean r = ArraysAndSorting.contains(outer, inner);
+
+        // assert
+        assertFalse(r);
+
+    }
 }
